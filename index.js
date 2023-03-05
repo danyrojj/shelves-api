@@ -2,10 +2,6 @@ const express = require('express');
 const {allocate} =  require('./src/routes/index');
 const {shelves} = require('./src/service/shelve-service');
 
-
-
-
-
 const app = express();
 app.use(express.json());
 
