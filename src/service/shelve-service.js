@@ -34,7 +34,7 @@ const checkDimention = (itemD, shelveD) => {
     const [left, right] = shelveD.split("-").map((limit) => parseInt(limit));
     return itemD > left && itemD < right;
   } else {
-    return itemD === shelveD;
+    return itemD === parseInt(shelveD);
   }
 };
 
@@ -56,9 +56,9 @@ const generateShelves = (height, width) => {
 
 const allocateCell = (content, shelves) => {
   const { productId, quantity } = content;
-  
-  if(quantity > CELL_CAPACITY){
-    return { foundCell: false }
+
+  if (quantity > CELL_CAPACITY) {
+    return { foundCell: false };
   }
   const { chilled, hazardous } = getProductProperties(productId);
 
